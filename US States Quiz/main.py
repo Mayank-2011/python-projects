@@ -15,15 +15,8 @@ states_list = states.state.to_list()
 while len(correct_guess) < 50:
     answer = screen.textinput(title=f"{len(correct_guess)}/50 States Correct", prompt="What's another state name?").title()
     if answer == "Exit":
-        states_to_learn = []
-        for state in states_list:
-            if state in correct_guess:
-                continue
-            else:
-                states_to_learn.append(state)
-
+        states_to_learn = [state for state in states_list if state not in correct_guess]
         new_dict = {'States to learn': states_to_learn}
-
         df = pandas.DataFrame(new_dict)
         df.to_csv('states_to_learn.csv')
         break
