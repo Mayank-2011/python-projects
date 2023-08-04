@@ -30,3 +30,5 @@ day_of_week = now.weekday()
 
 if day_of_week==4:
     send_email()
+
+# We can automate this code with the help of python anywhere
