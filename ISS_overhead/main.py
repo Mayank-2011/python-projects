@@ -3,8 +3,9 @@ from datetime import datetime
 import smtplib
 import time
 
-MY_LAT = 25.437500  # Your longitude
-MY_LONG = 75.646301  # Your longitude
+# You can find the latitude and longitude of your location on www.latlong.net
+MY_LAT =   # Your longitude
+MY_LONG =  # Your longitude
 
 response = requests.get(url="http://api.open-notify.org/iss-now.json")
 response.raise_for_status()
@@ -43,7 +44,12 @@ while True:
     if close_to_my_location() and sunrise < time_now > sunset:
         my_email = "<your email"
         password = "<your app password"
-        smtp_server = 
+        smtp_server = '''
+                  Gmail: smtp.gmail.com
+                  Hotmail: smtp.live.com
+                  Outlook: outlook.office365.com
+                  Yahoo: smtp.mail.yahoo.com
+                  '''
         with smtplib.SMTP(smtp_server, port=587) as connection:
             connection.starttls()
             connection.login(user=my_email, password=password)
