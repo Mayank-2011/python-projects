@@ -1,12 +1,11 @@
 import smtplib
-import os
 
 
 class NotificationManager:
 
     def send_emails(self, emails, message):
-        my_email = "jmayank5555@gmail.com"
-        password = "imrqzaynkgpozdyg"
+        my_email = "your email"
+        password = "your email application password"
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
             connection.login(my_email, password)
